@@ -21,5 +21,6 @@ A serious test and method of combination. The chapter 银心仿真数据生成 r
     1. Empty errors of astrometry parameters and radial velocity are sampled based on attribution of Gaia.
     2. Nan value in Gaia is inserted by a formula:
        ```python
-       insert_data = np.random.rand(num_na) * data.std() + data.max()```
+       insert_data = np.random.rand(num_na) * data.std() + data.max()
+       ```
     3. Names of columns are changed to CSST-simulation format.
