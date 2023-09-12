@@ -1,4 +1,6 @@
-# CSST-combined-simulation-catalog_hyz
-> This is the first time that I pull codes to github. If there is any question, please confirmly let me know.
-> Simulation catalog generation created by hyz, mainly combining catalogs from Gaia and CSST Trilegal. Work for CSST simulation observatory.
-## csst_sim_
+# csst_simulation_catalog-hyz
+> This is the first time that I pull codes to github. If there is any question, please confirmly let me know. As a beginner of coding, I will be appreciated if any advice could help.
+> Simulation catalog generation created by hyz, containing different ways to generate catalogs for CSST simulation observation.
+> The codes were not carefully revised, remaining a complete clumsy development process.
+## cat_extraction-galaxycenter
+extraction of Gaia and CSST-Trilegal catalog, and 
