@@ -13,7 +13,7 @@ A combination method of Gaia and CSST-Trilegal catalog. Extractions from specifi
 
 
 ## cat_combination.ipynb
-A serious test and method of combination. The chapter 银心仿真数据生成 refers to [cat_combination-galaxycenter.py](./cat_combination-galaxycenter.py), and the chapter 优化合并星表 is the latest version. The latest version containing:
+A serious test and method of combination. The chapter 银心仿真数据生成 refers to [cat_combination-galaxycenter.py](./cat_combination-galaxycenter.py), and the chapter 优化合并星表 is the latest version. [utils.py](./utils.py) is needed in it. The latest version containing:
 1. Extraction catalog from Trilegal and Gaia within a certain area. Parameters includes astrometry, radial velocity and three atmospheric parameters.
 2. Transferming the epoch of Gaia from 2016 to 2000 for matching.
 3. Importing [magnitude conversion system](https://gea.esac.esa.int/archive/documentation/GDR3/Data_processing/chap_cu5pho/cu5pho_sec_photSystem/cu5pho_ssec_photRelations.html).
@@ -24,3 +24,11 @@ A serious test and method of combination. The chapter 银心仿真数据生成 r
        insert_data = np.random.rand(num_na) * data.std() + data.max()
        ```
     3. Names of columns are changed to CSST-simulation format.
+
+## utils.ipynb
+Wraps some functions used in [cat_combination.ipynb](./cat_combination.ipynb).
+
+## catalog_sampler.ipynb
+
+## healpy_learning-Trilegal_statistics.ipynb
+A basically learning code with healpy and a simple statistical analyze of Trilegal catalog.
