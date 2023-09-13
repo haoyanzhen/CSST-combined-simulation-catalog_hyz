@@ -6,7 +6,7 @@
 
 *The codes were not carefully revised, remaining a complete clumsy development process.*
 
-> There are three catalogs used in these codes: [Gaia](https://gea.esac.esa.int/archive/), [CSST-Trilegal](https://nadc.china-vo.org/data/data/csst-trilegal/f), simulation catalog provided by Shao Zhengyi.
+> There are three catalogs used in these codes: [Gaia](https://gea.esac.esa.int/archive/), [CSST-Trilegal](https://nadc.china-vo.org/data/data/csst-trilegal/f), simulation catalog provided by Shao Zhengyi, [CosmoDC2](https://data.lsstdesc.org/doc/cosmodc2).
 
 ## cat_extraction-galaxycenter.py
 A combination method of Gaia and CSST-Trilegal catalog. Extractions from specific sky area are firstly done by healpix. Next combination simply replaces the brightest stars in Trilegal catalog by Gaia catalog, according to Gaia's limiting magnitude. Notice in this code, magnitude system has not been been converted, which will leading to a serious error in replacement. A better version is at the end of [cat_extraction.ipynb](./cat_extraction.ipynb).
