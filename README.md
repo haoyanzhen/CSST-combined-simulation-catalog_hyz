@@ -8,15 +8,11 @@
 
 > There are three catalogs used in these codes: [Gaia](https://gea.esac.esa.int/archive/), [CSST-Trilegal](https://nadc.china-vo.org/data/data/csst-trilegal/f), simulation catalog provided by Shao Zhengyi, [CosmoDC2](https://data.lsstdesc.org/doc/cosmodc2).
 
-## cat_extraction-galaxycenter.py
-A combination method of Gaia and CSST-Trilegal catalog. Extractions from specific sky area are firstly done by healpix. Next combination simply replaces the brightest stars in Trilegal catalog by Gaia catalog, according to Gaia's limiting magnitude. Notice in this code, magnitude system has not been been converted, which will leading to a serious error in replacement. A better version is at the end of [cat_extraction.ipynb](./cat_extraction.ipynb).
-
-
 ## cat_combination.ipynb
 A serious test and method of combination. The chapter 银心仿真数据生成 refers to [cat_combination-galaxycenter.py](./cat_combination-galaxycenter.py), and the chapter 优化合并星表 is the latest version. [utils.py](./utils.py) is needed in it. The latest version containing:
 1. Extraction catalog from Trilegal and Gaia within a certain area. Parameters includes astrometry, radial velocity and three atmospheric parameters.
 2. Transferming the epoch of Gaia from 2016 to 2000 for matching.
-3. Importing [magnitude conversion system](https://gea.esac.esa.int/archive/documentation/GDR3/Data_processing/chap_cu5pho/cu5pho_sec_photSystem/cu5pho_ssec_photRelations.html).
+3. Importing [magnitude conversion system](https://gea.esac.esa.int/archive/documentation/GDR3/Data_processing/chap_cu5pho/cu5pho_sec_photSystem/cu5pho_ssec_photRelations.html). Replace the brightest stars in Trilegal with Gaia. 
 4. Combining Gaia catalog and Trilegal catalog. Several changes have been made for requirement of CSST simulation:
     1. Empty errors of astrometry parameters and radial velocity are sampled based on attribution of Gaia.
     2. Nan value in Gaia is inserted by a formula:
@@ -25,10 +21,23 @@ A serious test and method of combination. The chapter 银心仿真数据生成 r
        ```
     3. Names of columns are changed to CSST-simulation format.
 
-## utils.ipynb
-Wraps some functions used in [cat_combination.ipynb](./cat_combination.ipynb).
+## cat_combination-galaxycenter.py
+An early version of [cat_combination.ipynb](./cat_combination.ipynb).
+
+## catalog_generator.ipynb
+Contents:
+- Early unsuccessful trials.
+- A simple method assumes that parameters of stars follow simple distribution laws.
+- A procedure from raw data to pointing file, stellar catalog and galaxy catalog in format of csst-simulation.
 
 ## catalog_sampler.ipynb
+A method of generating catalog based on statistic and sampling. Template catalog is provided by Shao Zhengyi.
+
+## catalog_sampler.py
+A .py version of [catalog_sampler.ipynb](./catalog_sampler.py).
+
+## utils.ipynb
+Wraps some functions used in [cat_combination.ipynb](./cat_combination.ipynb).
 
 ## healpy_learning-Trilegal_statistics.ipynb
 A basically learning code with healpy and a simple statistical analyze of Trilegal catalog.
